@@ -8,21 +8,31 @@
     <script>
         function copyMorse() {
             const morseText = document.getElementById("morse-text").innerText;
-            navigator.clipboard.writeText(morseText).then(() => {
-                alert("Texte morse copié !");
-            });
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(morseText).then(() => {
+                    alert("Texte morse copié !");
+                }).catch((err) => {
+                    console.error("Erreur lors de la copie :", err);
+                    alert("Erreur lors de la copie du texte.");
+                });
+            } else {
+                alert("Le presse-papier n'est pas accessible dans ce navigateur.");
+            }
         }
     </script>
 </head>
 <body>
+    <div class="logo-container">
+        <img src="../logo.png" alt="Logo" class="logo"> <!-- Remplacez "votre-logo.png" par le chemin de votre logo -->
+    </div>
     <div class="container">
         <h1>Indice QR Code 🤠</h1>
         <p>Écriture Morse : <span id="morse-text" class="morse">··· −−− ··− ···  ·−·· ·  −− ·· −·−· ·−· −−− −····− −−− −· −·· · </span></p>
-        <button onclick="copyMorse()">Copier le Morse</button>
         
         <h2>Devinette</h2>
         <p>Je suis né dans les montagnes, j'ai grandi dans la vallée, et je meurs dans le désert. Qui suis-je ?</p>
         <p><strong>Réponse :</strong> La rivière</p>
     </div>
+    <button onclick="copyMorse()">Copier le Morse</button>
 </body>
 </html>
