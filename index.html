@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Énigme QR Code - Western</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
-    <style>
-        body {
-            font-family: 'Special Elite', cursive;
-            background: #8F422A;
-            color: #4E2A14;
-            text-align: center;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            background: #F4E1C1;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-            border: 10px solid #8B4513;
-            max-width: 500px;
-            width: 90%;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
-            opacity: 0.3;
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #8B0000;
-        }
-        p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .morse {
-            font-size: 24px;
-            letter-spacing: 5px;
-            background: #FFF5D7;
-            padding: 5px;
-            border: 1px solid #8B4513;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .logo-container {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-        .logo {
-            width: 150px;
-            height: auto;
-        }
-        @media (max-width: 768px) {
-            .logo {
-                width: 100px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function copyMorse() {
             const morseText = document.getElementById("morse-text").innerText;
